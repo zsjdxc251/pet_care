@@ -1,4 +1,54 @@
 export default function Home() {
+  const reviews = [
+    {
+      name: "豆包妈妈",
+      pet: "英短猫 · 低压洗护",
+      text: "第一次带胆小猫来洗护，店员全程很轻声，结束后还发了护理记录，特别放心。",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "阿柴爸爸",
+      pet: "金毛 · 精致洗护",
+      text: "我家金毛毛量大，洗完很蓬松，耳朵也清理得很细。预约制不用排队。",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "糯米主人",
+      pet: "泰迪 · 美容造型",
+      text: "造型很自然，没有剪得太夸张。美容师会先沟通想要的长度，体验很好。",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "小七姐姐",
+      pet: "布偶猫 · 梳毛除浮毛",
+      text: "长毛猫打结的位置处理得很温柔，没有硬扯。回家后毛顺了很多，也不再一直舔毛。",
+      avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "可乐爸爸",
+      pet: "柯基 · 基础洁净",
+      text: "脚底毛和指甲修得很干净，洗完香味不刺鼻。店里消毒流程看得到，挺安心。",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "团子妈妈",
+      pet: "比熊 · 圆脸造型",
+      text: "剪完脸型很圆，眼周也清爽了。美容师还提醒我们泪痕护理方法，很细心。",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "Lucky 主人",
+      pet: "边牧 · 毛结处理",
+      text: "运动后毛结比较多，店员先说明可能加时和费用，处理结果比预期好很多。",
+      avatar: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=120&q=80",
+    },
+    {
+      name: "芝麻哥哥",
+      pet: "暹罗猫 · 独立时段",
+      text: "猫咪怕吹风，店里安排了安静时段，中途还拍视频同步状态，体验很透明。",
+      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80",
+    },
+  ];
   return (
     <>
       <header className="header">
@@ -9,7 +59,12 @@ export default function Home() {
         </nav>
       </header>
       <main id="top">
-        <section className="hero">`r`n          <div className="hero-slides" aria-hidden="true">`r`n            <div className="hero-slide hero-slide-1" />`r`n            <div className="hero-slide hero-slide-2" />`r`n            <div className="hero-slide hero-slide-3" />`r`n          </div>
+        <section className="hero">
+          <div className="hero-slides" aria-hidden="true">
+            <div className="hero-slide hero-slide-1" />
+            <div className="hero-slide hero-slide-2" />
+            <div className="hero-slide hero-slide-3" />
+          </div>
           <div className="hero-inner">
             <div className="eyebrow">专业洗护 · 温柔陪伴 · 透明消毒</div>
             <h1>毛孩子洗护馆</h1>
@@ -48,7 +103,29 @@ export default function Home() {
           <div className="container"><div className="section-head"><h2>预约到店流程</h2><p>减少等待，把时间留给安抚和护理。</p></div><div className="process"><div className="step"><h3>线上预约</h3><p>选择宠物类型、服务套餐和期望到店时间。</p></div><div className="step"><h3>到店评估</h3><p>美容师确认毛量、打结、皮肤和性格状态。</p></div><div className="step"><h3>专属洗护</h3><p>独立工具和浴位，温柔安抚，分步护理。</p></div><div className="step"><h3>护理反馈</h3><p>同步现场照片、护理记录和下次建议。</p></div></div></div>
         </section>
         <section id="reviews" className="reviews">
-          <div className="container"><div className="section-head"><h2>主人们怎么说</h2><p>干净、耐心、准时，是我们最看重的门店体验。</p></div><div className="grid-3"><article className="review-card"><div className="stars">★★★★★</div><p>第一次带胆小猫来洗护，店员全程很轻声，结束后还发了护理记录，特别放心。</p><div className="reviewer"><img className="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="顾客头像" /><span>豆包妈妈</span></div></article><article className="review-card"><div className="stars">★★★★★</div><p>我家金毛毛量大，洗完很蓬松，耳朵也清理得很细。预约制不用排队。</p><div className="reviewer"><img className="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="顾客头像" /><span>阿柴爸爸</span></div></article><article className="review-card"><div className="stars">★★★★★</div><p>造型很自然，没有剪得太夸张。美容师会先沟通想要的长度，体验很好。</p><div className="reviewer"><img className="avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="顾客头像" /><span>糯米主人</span></div></article></div></div>
+          <div className="container">
+            <div className="section-head">
+              <h2>主人们怎么说</h2>
+              <p>干净、耐心、准时，是我们最看重的门店体验。真实反馈会持续滚动展示，悬停即可慢慢看。</p>
+            </div>
+          </div>
+          <div className="review-carousel" aria-label="客户评价轮播">
+            <div className="review-track">
+              {[...reviews, ...reviews].map((review, index) => (
+                <article className="review-card" key={`${review.name}-${index}`}>
+                  <div className="stars" aria-label="五星评价">★★★★★</div>
+                  <p>{review.text}</p>
+                  <div className="reviewer">
+                    <img className="avatar" src={review.avatar} alt={`${review.name}头像`} />
+                    <span>
+                      <strong>{review.name}</strong>
+                      <small>{review.pet}</small>
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </section>
         <section id="location" className="location">
           <div className="container">

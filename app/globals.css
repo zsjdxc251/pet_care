@@ -64,9 +64,21 @@ ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; color: #
 .step:before { content: "0" counter(step); display: block; margin-bottom: 18px; color: #2f7f71; font-size: 28px; line-height: 1; font-weight: 900; }
 .step h3 { margin-bottom: 6px; font-size: 18px; }
 .step p { color: #66757f; font-size: 15px; margin-bottom: 0; }
-.reviews { background: #eef7f4; }
+.reviews { background: #eef7f4; overflow: hidden; }
+.review-carousel { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+.review-track { display: flex; width: max-content; gap: 18px; padding: 4px 18px 12px; animation: reviewMarquee 42s linear infinite; }
+.review-carousel:hover .review-track { animation-play-state: paused; }
+.review-track .review-card { flex: 0 0 360px; min-height: 236px; display: flex; flex-direction: column; justify-content: space-between; }
+.review-card p { font-size: 16px; }
+@keyframes reviewMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 9px)); }
+}
 .stars { color: #d79716; margin-bottom: 14px; }
 .reviewer { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-weight: 800; }
+.reviewer span { display: grid; gap: 1px; }
+.reviewer strong { line-height: 1.2; }
+.reviewer small { color: #66757f; font-size: 13px; font-weight: 600; }
 .avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
 .location { background: #fffaf4; }
 .location-wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; align-items: stretch; }
@@ -110,14 +122,17 @@ input:focus, select:focus, textarea:focus { border-color: #2f7f71; box-shadow: 0
   33% { opacity: 1; }
   45% { opacity: 0; transform: scale(1); }
   100% { opacity: 0; transform: scale(1.04); }
-}  .stats, .grid-3, .process, .features, .booking, .location-wrap { grid-template-columns: 1fr; }
+}
+  .stats, .grid-3, .process, .features, .booking, .location-wrap { grid-template-columns: 1fr; }
+  .review-track .review-card { flex-basis: 320px; }
   .section-head { align-items: start; flex-direction: column; }
   .feature-photo, .booking-info { min-height: 360px; }
   .pet-map { min-height: 420px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-slide { animation: none; }
+  .hero-slide, .review-track { animation: none; }
   .hero-slide-1 { opacity: 1; transform: none; }
+  .review-track { flex-wrap: wrap; width: auto; }
 }
 @media (max-width: 560px) {
   .nav, .container, .hero-inner, .footer-inner { width: min(100% - 24px, 1180px); }
@@ -127,7 +142,9 @@ input:focus, select:focus, textarea:focus { border-color: #2f7f71; box-shadow: 0
   .hero-actions, .form-actions { align-items: stretch; flex-direction: column; }
   .btn { width: 100%; }
   .form-grid { grid-template-columns: 1fr; }
+  .review-carousel { -webkit-mask-image: none; mask-image: none; }
+  .review-track { gap: 14px; padding-inline: 12px; animation-duration: 50s; }
+  .review-track .review-card { flex-basis: min(82vw, 300px); min-height: 270px; }
   form, .booking-info { padding: 22px; }
 }
-
 
