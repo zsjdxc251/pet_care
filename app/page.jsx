@@ -1,4 +1,18 @@
+export const dynamic = "force-dynamic";
+
+function getTomorrowDate() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const year = tomorrow.getFullYear();
+  const month = String(tomorrow.getMonth() + 1).padStart(2, "0");
+  const day = String(tomorrow.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 export default function Home() {
+  const tomorrowDate = getTomorrowDate();
   const reviews = [
     {
       name: "豆包妈妈",
@@ -147,7 +161,7 @@ export default function Home() {
         <section id="booking">
           <div className="container booking">
             <div className="booking-info"><h2>今天给它约一个清爽时刻</h2><p>营业时间：周一至周日 10:00-20:00<br />地址：上海市宜川路街道陕西北路 1620 号<br />电话：138-0000-8888</p></div>
-            <form><div className="form-grid"><label>主人姓名<input type="text" name="name" placeholder="请输入姓名" /></label><label>期望到店时间<select name="arrivalTime" defaultValue=""><option value="" disabled>请选择到店时间</option><option>10:00-10:30</option><option>10:30-11:00</option><option>11:00-11:30</option><option>11:30-12:00</option><option>13:00-13:30</option><option>13:30-14:00</option><option>14:00-14:30</option><option>14:30-15:00</option><option>15:00-15:30</option><option>15:30-16:00</option><option>16:00-16:30</option><option>16:30-17:00</option><option>17:00-17:30</option><option>17:30-18:00</option><option>18:00-18:30</option><option>18:30-19:00</option></select></label><label>联系电话<input type="tel" name="phone" placeholder="请输入手机号" /></label><label>宠物类型<select name="pet"><option>狗狗</option><option>猫咪</option><option>其他小宠</option></select></label><label>预约服务<select name="service"><option>基础洁净</option><option>精致洗护</option><option>美容造型</option><option>猫咪低压洗护</option></select></label><label>期望日期<input type="date" name="date" /></label><label className="wide">备注<textarea name="message" placeholder="例如：体重、毛量、是否怕水、是否有皮肤敏感等" /></label></div><div className="form-actions"><button className="btn" type="submit">提交预约</button><p className="form-note">提交后我们会在 30 分钟内电话确认到店时段。</p></div></form>
+            <form><div className="form-grid"><label>主人姓名<input type="text" name="name" placeholder="请输入姓名" /></label><label>期望到店时间<select name="arrivalTime" defaultValue="09:30-10:00"><option>09:30-10:00</option><option>10:00-10:30</option><option>10:30-11:00</option><option>11:00-11:30</option><option>11:30-12:00</option><option>13:00-13:30</option><option>13:30-14:00</option><option>14:00-14:30</option><option>14:30-15:00</option><option>15:00-15:30</option><option>15:30-16:00</option><option>16:00-16:30</option><option>16:30-17:00</option><option>17:00-17:30</option><option>17:30-18:00</option><option>18:00-18:30</option><option>18:30-19:00</option></select></label><label>联系电话<input type="tel" name="phone" placeholder="请输入手机号" /></label><label>宠物类型<select name="pet"><option>狗狗</option><option>猫咪</option><option>其他小宠</option></select></label><label>预约服务<select name="service"><option>基础洁净</option><option>精致洗护</option><option>美容造型</option><option>猫咪低压洗护</option></select></label><label>期望日期<input type="date" name="date" defaultValue={tomorrowDate} /></label><label className="wide">备注<textarea name="message" placeholder="例如：体重、毛量、是否怕水、是否有皮肤敏感等" /></label></div><div className="form-actions"><button className="btn" type="submit">提交预约</button><p className="form-note">提交后我们会在 30 分钟内电话确认到店时段。</p></div></form>
           </div>
         </section>
       </main>
@@ -155,4 +169,3 @@ export default function Home() {
     </>
   );
 }
-
